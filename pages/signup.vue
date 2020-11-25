@@ -563,7 +563,6 @@ export default {
     prevstep() {
       this.step--;
     },
-    onFileSelected() {},
     async send() {
       try {
         this.$nuxt.$loading.start();
@@ -589,7 +588,9 @@ export default {
         data.append("paymentmade", false);
         console.log(data);
         if (this.form.Password === this.form.Confirm) {
+          this.$toast.error(data).goAway(2000);
           let response = await this.$axios.$post("/api/auth/signup", data);
+
           if (response.code === "EAI_AGAIN") {
             this.$toast.error(response).goAway(2000);
             this.$nuxt.$loading.finish();
