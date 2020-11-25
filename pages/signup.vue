@@ -566,26 +566,28 @@ export default {
     async send() {
       try {
         this.$nuxt.$loading.start();
-        let data = new FormData();
-        data.append("Bname", this.form.Bname);
-        data.append("Bcategory", this.form.Bcategory);
-        data.append("Bemail", this.form.Bemail);
-        data.append("Bphone", this.form.Bphone);
-        data.append("Btype", this.form.Btype);
-        data.append("Fname", this.form.Fname);
-        data.append("Lname", this.form.Lname);
-        data.append("Username", this.form.Username);
-        data.append("Email", this.form.Email);
-        data.append("Password", this.form.Password);
-        data.append("Aline1", this.form.Aline1);
-        data.append("Aline2", this.form.Aline1);
-        data.append("City", this.form.City);
-        data.append("State", this.form.State);
-        data.append("Country", this.form.Country);
-        data.append("Zipcode", this.form.Zipcode);
-        data.append("registered", true);
-        data.append("Confirm", this.form.Confirm);
-        data.append("paymentmade", false);
+
+        let data = {
+          Bname: this.form.Bname,
+          Bcategory: this.form.Bcategory,
+          Bemail: this.form.Bemail,
+          Bphone: this.form.Bphone,
+          Btype: this.form.Btype,
+          Fname: this.form.Fname,
+          Lname: this.form.Lname,
+          Email: this.form.Email,
+          Password: this.form.Password,
+          Aline1: this.form.Aline1,
+          Aline2: this.form.Aline1,
+          City: this.form.City,
+          State: this.form.State,
+          Country: this.form.Country,
+          Zipcode: this.form.Zipcode,
+          egistered: true,
+          Confirm: this.form.Confirm,
+          paymentmade: false
+        };
+
         console.log(data);
         if (this.form.Password === this.form.Confirm) {
           this.$toast.error(data).goAway(2000);
