@@ -1,4 +1,4 @@
-const URL = 'http://localhost:8001'
+const URL = 'https://floating-river-72739.herokuapp.com'
 export default {
     /*
      ** Nuxt rendering mode
