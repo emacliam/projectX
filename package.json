@@ -1,0 +1,34 @@
+{
+    "name": "PDFinder",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "start": "nuxt start",
+        "generate": "nuxt generate",
+        "heroku-postbuild": "nuxt build"
+    },
+    "dependencies": {
+        "@mapbox/mapbox-gl-geocoder": "^4.5.1",
+        "@nuxtjs/auth": "^4.9.1",
+        "@nuxtjs/axios": "^5.11.0",
+        "@nuxtjs/pwa": "^3.0.0-beta.20",
+        "@nuxtjs/toast": "^3.3.0",
+        "chart.js": "^2.9.3",
+        "hchs-vue-charts": "^1.2.8",
+        "leaflet-geosearch": "^3.0.6",
+        "leaflet-search": "^2.9.8",
+        "mapbox-gl": "^1.11.0",
+        "nuxt": "^2.13.0",
+        "nuxt-validate": "^1.0.1",
+        "places.js": "^1.19.0",
+        "vee-validate": "^3.3.7",
+        "vue-js-modal": "^2.0.0-rc.3",
+        "vue-star-rating": "^1.6.1",
+        "vue2-leaflet-geosearch": "^1.0.6"
+    },
+    "devDependencies": {
+        "@nuxtjs/tailwindcss": "^2.0.0"
+    }
+}
