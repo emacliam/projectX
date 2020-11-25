@@ -603,7 +603,7 @@ export default {
                 password: this.form.Password
               }
             });
-            this.$router.push("/payment");
+            this.$router.push("/home");
           }
         } else {
           this.$toast.error("Passwords do not match").goAway(2000);
