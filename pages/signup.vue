@@ -591,8 +591,7 @@ export default {
         if (this.form.Password === this.form.Confirm) {
           let response = await this.$axios.$post("/api/auth/signup", data);
           if (response.code === "EAI_AGAIN") {
-            console.log(response);
-            this.$toast.error("something went wrong").goAway(2000);
+            this.$toast.error(response).goAway(2000);
             this.$nuxt.$loading.finish();
           }
           if (response.success) {
@@ -611,8 +610,7 @@ export default {
           this.$nuxt.$loading.finish();
         }
       } catch (error) {
-        console.log(error);
-        this.$toast.error("something went wrong").goAway(2000);
+        this.$toast.error(error).goAway(2000);
         this.$nuxt.$loading.finish();
       }
     }
