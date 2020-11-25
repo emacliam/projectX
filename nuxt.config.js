@@ -1,4 +1,4 @@
-const URL = 'https://floating-river-72739.herokuapp.com'
+const URL = 'https://polar-retreat-14217.herokuapp.com'
 export default {
     /*
      ** Nuxt rendering mode
