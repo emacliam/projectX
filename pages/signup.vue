@@ -117,35 +117,6 @@
                       </select>
                     </div>
                   </div>
-                  <div
-                    rules="required|image"
-                    class="w-full mx-2 flex-1 svelte-1l8159u"
-                  >
-                    <div
-                      class="font-bold h-6 mt-3 text-gray-600 text-xs leading-8 uppercase"
-                    >
-                      Company Logo(optional)
-                    </div>
-                    <div class="flex items-center mt-4">
-                      <label
-                        class="w-48 h-8  text-center items-center bg-teal-600 rounded-lg text-blue font-bold tracking-wide uppercase border border-teal-600 cursor-pointer hover:bg-black hover:text-white"
-                      >
-                        <span>Add Logo</span>
-                        <input
-                          type="file"
-                          class="hidden"
-                          id="file"
-                          ref="file"
-                          v-on:change="handleFileUpload()"
-                        />
-                      </label>
-                      <img
-                        v-bind:src="imagePreview"
-                        v-show="showPreview"
-                        class="w-24 rounded-full border border-teal-600 h-24 ml-4"
-                      />
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -602,11 +573,6 @@ export default {
         data.append("Bemail", this.form.Bemail);
         data.append("Bphone", this.form.Bphone);
         data.append("Btype", this.form.Btype);
-        data.append(
-          "Blogo",
-          this.form.selectedFile,
-          this.form.selectedFile.name
-        );
         data.append("Fname", this.form.Fname);
         data.append("Lname", this.form.Lname);
         data.append("Username", this.form.Username);
@@ -625,10 +591,12 @@ export default {
         if (this.form.Password === this.form.Confirm) {
           let response = await this.$axios.$post("/api/auth/signup", data);
           if (response.code === "EAI_AGAIN") {
+            console.log(response);
             this.$toast.error("something went wrong").goAway(2000);
             this.$nuxt.$loading.finish();
           }
           if (response.success) {
+            console.log(response);
             this.$nuxt.$loading.finish();
             await this.$auth.loginWith("local", {
               data: {
@@ -643,52 +611,9 @@ export default {
           this.$nuxt.$loading.finish();
         }
       } catch (error) {
+        console.log(error);
         this.$toast.error("something went wrong").goAway(2000);
         this.$nuxt.$loading.finish();
-      }
-    },
-    handleFileUpload() {
-      this.form.selectedFile = event.target.files[0];
-      this.form.fileName = event.target.files[0].name;
-      /*
-          Set the local file variable to what the user has selected.
-        */
-      this.form.selectedFile = this.$refs.file.files[0];
-
-      /*
-          Initialize a File Reader object
-        */
-      let reader = new FileReader();
-
-      /*
-          Add an event listener to the reader that when the file
-          has been loaded, we flag the show preview as true and set the
-          image to be what was read from the reader.
-        */
-      reader.addEventListener(
-        "load",
-        function() {
-          this.showPreview = true;
-          this.imagePreview = reader.result;
-        }.bind(this),
-        false
-      );
-
-      /*
-          Check to see if the file is not empty.
-        */
-      if (this.form.selectedFile) {
-        /*
-            Ensure the file is an image file.
-          */
-        if (/\.(jpe?g|png|gif)$/i.test(this.form.selectedFile.name)) {
-          /*
-              Fire the readAsDataURL method which will read the file in and
-              upon completion fire a 'load' event which we will listen to and
-              display the image in the preview.
-            */
-          reader.readAsDataURL(this.form.selectedFile);
-        }
       }
     }
   }
