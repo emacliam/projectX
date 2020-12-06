@@ -356,8 +356,7 @@
                         class="p-1 px-2 appearance-none outline-none w-full text-gray-800"
                         v-model="form.Country"
                       >
-                        <option value="Solo">Solo</option>
-                        <option value="Company">Company</option>
+                        <option value="Zimbabwe">Zimbabwe</option>
                         <option value="Other">Other</option>
                       </select>
                     </div>
