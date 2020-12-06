@@ -89,10 +89,10 @@
             </button>
           </div>
           <div class="md:w-1/2 md:justify-center md:flex hidden">
-            <img
+            <!--    <img
               src="https://demos.onepagelove.com/html/leno/images/header-iphone.png"
               alt="Mobile Phone"
-            />
+            /> -->
           </div>
         </div>
       </section>
