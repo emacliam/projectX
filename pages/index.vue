@@ -96,43 +96,6 @@
           </div>
         </div>
       </section>
-      <section class="bg-gray-800 py-32">
-        <div class="container mx-auto">
-          <h1 class="text-5xl font-bold uppercase text-center text-gray-300">
-            Features
-          </h1>
-          <div class="flex justify-center">
-            <ul>
-              <li>Quality Advertisement</li>
-              <li>Live Map</li>
-              <li>Quality Search Feature</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section class="bg-gray-900 h-auto w-full text-center">
-        <div class="text-2xl font-bold">Famous Stores Using Our Platform</div>
-        <div class="flex justify-center w-full pt-4">
-          <img
-            class="m-2 w-24 h-10 rounded-lg"
-            title="OK SUPERMARKET"
-            src="/OK.png"
-            alt="OK"
-          />
-          <img
-            class="m-2 w-24 h-10 rounded-lg"
-            title="SPAR SUPERMARKET"
-            src="/SPAR.png"
-            alt="SPAR"
-          />
-          <img
-            class="m-2 w-24 h-10 rounded-lg"
-            title="TM SUPERMARKET"
-            src="/TM.png"
-            alt="TM"
-          />
-        </div>
-      </section>
       <footer class="p-2">
         <h1 class="h-auto w-auto">
           ProductFinder.inc
